@@ -60,6 +60,19 @@ use stringslice::StringSlice;
 assert_eq!("string".try_slice(4..2), None);
 ```
 
+## Run in parallel
+
+You can have access to parallelized methods by enabling the `rayon` feature. Thanks to the [rayon](https://github.com/rayon-rs/rayon) crate, the string slicing will execute through many threads.
+
+**Par**allel methods:
+- `par_slice`
+- `par_try_slice`
+- `par_substring`
+- `par_try_substring`
+
+> [!WARNING]
+> Using the **par**allel methods on bigger strings is recommended. Parallelism scales greatly on bigger sizes.
+
 ## Licence
 
 Licensed under either of

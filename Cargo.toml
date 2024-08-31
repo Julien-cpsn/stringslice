@@ -11,6 +11,15 @@ keywords = ["string", "slice", "substring", "unicode", "utf-8"]
 categories = ["no-std", "algorithms", "parsing", "rust-patterns", "text-processing"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+rayon_ = { package = "rayon", version = "1.10.0", optional = true }
+
+[features]
+std = []
+rayon = ["std"]
+
+[package.metadata.docs.rs]
+features = ["std", "rayon"]
 
 [dev-dependencies.cargo-husky]
 version = "1"
